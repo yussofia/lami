@@ -3,330 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Обучение ламинированию бровей и ресниц | Софья</title>
+    <title>Обучение ламинированию бровей и ресниц | Софья Юссупова</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
     <style>
-        /* === Базовые настройки и переменные === */
+        /* === Базовые настройки === */
         :root {
-            --bg-light: #FBF9F6; /* Светло-бежевый фон */
-            --bg-dark: #EBE3DB; /* Темно-бежевый фон секций */
-            --text-main: #4A3C31; /* Темно-коричневый текст */
-            --accent-color: #B58A6A; /* Акцентный карамельно-коричневый */
+            --bg-light: #FBF9F6;
+            --bg-dark: #EBE3DB;
+            --text-main: #4A3C31;
+            --accent-color: #B58A6A;
             --accent-hover: #987053;
             --white: #FFFFFF;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Montserrat', sans-serif; color: var(--text-main); background-color: var(--bg-light); line-height: 1.6; scroll-behavior: smooth; }
+        h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 600; }
+        a { text-decoration: none; color: inherit; }
 
-        body {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--text-main);
-            background-color: var(--bg-light);
-            line-height: 1.6;
-            scroll-behavior: smooth;
-        }
+        .btn { display: inline-block; background-color: var(--accent-color); color: var(--white); padding: 15px 30px; border-radius: 4px; font-weight: 500; text-align: center; border: none; cursor: pointer; transition: 0.3s; text-transform: uppercase; letter-spacing: 1px; font-size: 0.9rem; }
+        .btn:hover { background-color: var(--accent-hover); }
+        .btn-outline { background-color: transparent; border: 1px solid var(--accent-color); color: var(--accent-color); }
+        .btn-outline:hover { background-color: var(--accent-color); color: var(--white); }
 
-        h1, h2, h3 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 600;
-        }
+        section { padding: 80px 20px; }
+        .container { max-width: 1100px; margin: 0 auto; }
+        .section-title { text-align: center; font-size: 2.5rem; margin-bottom: 50px; }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        /* === Кнопки === */
-        .btn {
-            display: inline-block;
-            background-color: var(--accent-color);
-            color: var(--white);
-            padding: 15px 30px;
-            border-radius: 4px;
-            font-weight: 500;
-            text-align: center;
-            border: none;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-size: 0.9rem;
-        }
-
-        .btn:hover {
-            background-color: var(--accent-hover);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            border: 1px solid var(--accent-color);
-            color: var(--accent-color);
-        }
-
-        .btn-outline:hover {
-            background-color: var(--accent-color);
-            color: var(--white);
-        }
-
-        /* === Структура секций === */
-        section {
-            padding: 80px 20px;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 50px;
-            color: var(--text-main);
-        }
-
-        /* === Шапка и Главный экран (Hero) === */
-        .hero {
-            background-color: var(--bg-dark);
-            text-align: center;
-            padding: 100px 20px;
-            border-bottom: 1px solid #DCD0C6;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            color: var(--text-main);
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 40px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
+        /* === Главный экран === */
+        .hero { background-color: var(--bg-dark); text-align: center; padding: 100px 20px; border-bottom: 1px solid #DCD0C6; }
+        .hero h1 { font-size: 3rem; margin-bottom: 20px; }
+        .hero p { font-size: 1.2rem; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; }
 
         /* === Обо мне === */
-        .about-wrapper {
-            display: flex;
-            align-items: center;
-            gap: 50px;
-        }
+        .about-wrapper { display: flex; align-items: center; gap: 50px; }
+        .about-text { flex: 1; }
+        .about-text h2 { font-size: 2rem; margin-bottom: 20px; }
+        .about-text p { margin-bottom: 15px; }
+        .about-values { margin-top: 20px; font-style: italic; font-family: 'Playfair Display', serif; color: var(--accent-color); font-size: 1.2rem; }
+        .about-img { flex: 1; width: 100%; max-width: 500px; border-radius: 8px; object-fit: cover; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
 
-        .about-text {
-            flex: 1;
-        }
-
-        .about-text h2 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-
-        .about-text p {
-            margin-bottom: 15px;
-        }
-
-        .about-values {
-            margin-top: 20px;
-            font-style: italic;
-            font-family: 'Playfair Display', serif;
-            color: var(--accent-color);
-            font-size: 1.2rem;
-        }
-
-        .about-image-placeholder {
-            flex: 1;
-            background-color: #DCD0C6;
-            height: 400px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #88786B;
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-        }
+        /* === Структура обучения === */
+        .course-structure { background-color: var(--white); }
+        .structure-header { text-align: center; margin-bottom: 50px; max-width: 800px; margin-left: auto; margin-right: auto; }
+        .structure-header p { font-size: 1.1rem; color: #666; }
+        .structure-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .structure-card { background: var(--bg-light); padding: 30px; border-radius: 8px; border-left: 3px solid var(--accent-color); }
+        .structure-card h4 { font-size: 1.2rem; margin-bottom: 15px; color: var(--text-main); display: flex; align-items: center; gap: 10px; }
+        .structure-card p { font-size: 0.95rem; margin-bottom: 10px; }
+        .structure-card ul { list-style: none; margin-left: 0; margin-bottom: 15px; }
+        .structure-card ul li { font-size: 0.95rem; margin-bottom: 8px; padding-left: 15px; position: relative; }
+        .structure-card ul li::before { content: '•'; color: var(--accent-color); position: absolute; left: 0; font-weight: bold; }
+        .highlight-text { font-weight: 600; color: var(--accent-color); }
 
         /* === Тарифы === */
-        .pricing {
-            background-color: var(--bg-dark);
-        }
+        .pricing { background-color: var(--bg-dark); }
+        .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .card { background: var(--white); padding: 40px 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); display: flex; flex-direction: column; transition: 0.3s; }
+        .card:hover { transform: translateY(-5px); }
+        .card h3 { font-size: 1.5rem; margin-bottom: 10px; border-bottom: 1px solid var(--bg-dark); padding-bottom: 15px; }
+        .price-box { margin: 20px 0; }
+        .price-offline { font-size: 1.6rem; font-weight: 600; color: var(--accent-color); }
+        .price-online { font-size: 1.1rem; color: #88786B; margin-top: 5px; }
+        .card ul { list-style: none; margin-bottom: 20px; flex-grow: 1; }
+        .card ul li { margin-bottom: 10px; position: relative; padding-left: 20px; font-size: 0.95rem; line-height: 1.4;}
+        .card ul li::before { content: '✓'; position: absolute; left: 0; color: var(--accent-color); font-weight: bold; }
+        .bonus-box { background-color: var(--bg-light); padding: 15px; border-radius: 6px; font-size: 0.9rem; margin-bottom: 25px; border-left: 2px solid var(--accent-color); }
+        .bonus-box strong { color: var(--accent-color); }
 
-        .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .card {
-            background: var(--white);
-            padding: 40px 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        .card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-            border-bottom: 1px solid var(--bg-dark);
-            padding-bottom: 15px;
-        }
-
-        .price {
-            font-size: 1.8rem;
-            font-weight: 600;
-            color: var(--accent-color);
-            margin: 20px 0;
-        }
-
-        .card ul {
-            list-style: none;
-            margin-bottom: 30px;
-            flex-grow: 1;
-        }
-
-        .card ul li {
-            margin-bottom: 10px;
-            position: relative;
-            padding-left: 20px;
-        }
-
-        .card ul li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--accent-color);
-            font-weight: bold;
-        }
-
-        .card.highlight {
-            border: 2px solid var(--accent-color);
-            transform: scale(1.02);
-        }
-
-        .card.highlight:hover {
-            transform: scale(1.02) translateY(-5px);
-        }
-
-        /* === Для мастеров === */
-        .mentorship {
-            background-color: var(--white);
-            text-align: center;
-            padding: 60px 20px;
-            margin: 50px auto;
-            max-width: 800px;
-            border: 1px dashed var(--accent-color);
-            border-radius: 8px;
-        }
-
-        .mentorship h3 {
-            font-size: 2rem;
-            margin-bottom: 15px;
-        }
-
-        /* === FAQ === */
-        .faq {
-            background-color: var(--bg-light);
-        }
-
-        .faq-item {
-            margin-bottom: 20px;
-            background: var(--white);
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
-        }
-
-        .faq-item h4 {
-            font-size: 1.1rem;
-            margin-bottom: 10px;
-            color: var(--accent-color);
-        }
-
-        /* === Форма заявки === */
-        .contact {
-            background-color: var(--bg-dark);
-        }
-
-        .contact-wrapper {
-            max-width: 600px;
-            margin: 0 auto;
-            background: var(--white);
-            padding: 50px;
-            border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-        }
-
-        .contact-wrapper p {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
-        form {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        input, select {
-            width: 100%;
-            padding: 15px;
-            border: 1px solid #DCD0C6;
-            border-radius: 4px;
-            font-family: inherit;
-            font-size: 1rem;
-            background-color: var(--bg-light);
-            outline: none;
-        }
-
-        input:focus, select:focus {
-            border-color: var(--accent-color);
-        }
+        /* === FAQ & Форма === */
+        .faq { background-color: var(--bg-light); }
+        .faq-item { margin-bottom: 20px; background: var(--white); padding: 20px; border-radius: 8px; }
+        .faq-item h4 { font-size: 1.1rem; margin-bottom: 10px; color: var(--accent-color); }
+        .contact { background-color: var(--bg-dark); }
+        .contact-wrapper { max-width: 500px; margin: 0 auto; background: var(--white); padding: 50px; border-radius: 8px; }
+        form { display: flex; flex-direction: column; gap: 20px; }
+        input { width: 100%; padding: 15px; border: 1px solid #DCD0C6; border-radius: 4px; font-family: inherit; font-size: 1rem; background-color: var(--bg-light); outline: none; }
+        input:focus { border-color: var(--accent-color); }
 
         /* === Подвал === */
-        footer {
-            background-color: var(--text-main);
-            color: var(--bg-light);
-            text-align: center;
-            padding: 30px 20px;
-        }
+        footer { background-color: var(--text-main); color: var(--bg-light); text-align: center; padding: 30px 20px; }
 
-        footer a {
-            color: var(--accent-color);
-        }
-
-        /* === Адаптивность (Mobile) === */
         @media (max-width: 768px) {
-            .about-wrapper {
-                flex-direction: column;
-            }
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-            .section-title {
-                font-size: 2rem;
-            }
-            .card.highlight {
-                transform: none;
-            }
-            .card.highlight:hover {
-                transform: translateY(-5px);
-            }
-            .contact-wrapper {
-                padding: 30px 20px;
-            }
+            .about-wrapper { flex-direction: column; }
+            .hero h1 { font-size: 2.2rem; }
+            .section-title { font-size: 2rem; }
+            .contact-wrapper { padding: 30px 20px; }
         }
     </style>
 </head>
@@ -335,111 +97,153 @@
     <header class="hero">
         <div class="container">
             <h1>Искусство идеальных бровей и ресниц</h1>
-            <p>Освой востребованную профессию с нуля или повысь свою квалификацию. Практика, постановка руки и секреты идеального ламинирования.</p>
+            <p>Освой востребованную профессию с нуля. Практика, постановка руки и секреты идеального ламинирования от мастера-практика.</p>
             <a href="#contact" class="btn">Записаться на курс</a>
         </div>
     </header>
 
     <section class="about" id="about">
         <div class="container about-wrapper">
-            <div class="about-image-placeholder">
-                [Здесь будет твое фото]
-            </div>
+            <img src="photo.jpg" alt="Софья Юссупова" class="about-img" onerror="this.src='https://images.unsplash.com/photo-1516975080661-422fc996d1f9?q=80&w=1000&auto=format&fit=crop';">
+            
             <div class="about-text">
-                <h2>Обо мне</h2>
-                <p>Привет! Меня зовут <strong>Софья</strong>. Я художник с профильным образованием и мастер по ламинированию с опытом более 2.5 лет.</p>
-                <p>Мой путь в beauty начался с риска: я взяла деньги, которые откладывала на долгожданную поездку в Грузию, и вложила их в свое обучение. Я начинала принимать клиентов за 2000 тенге, нарабатывая опыт и скорость. Сегодня у меня свой уютный кабинет, стабильный доход и ученики, которым я передаю свой опыт.</p>
-                <p class="about-values">Мои главные ценности в работе: ответственность, абсолютная честность и стремление к совершенству.</p>
+                <h2>Привет! Меня зовут Софья.</h2>
+                <p>По образованию я художник и педагог, а по призванию — мастер ламинирования ресниц и бровей.</p>
+                <p>Мой путь в beauty-сфере начался с рискованного, но судьбоносного решения: деньги, которые я копила на долгожданную поездку за границу, я вложила в свое обучение. Первых клиентов принимала всего за 2000 тенге, набираясь опыта и оттачивая скорость работы.</p>
+                <p>Сегодня у меня свой уютный кабинет, стабильный поток клиентов и ученики, которым я с удовольствием передаю свои знания и опыт.</p>
+                <p class="about-values">В работе для меня главное — ответственность, честность и постоянное стремление к совершенству.</p>
             </div>
         </div>
     </section>
 
-    <section class="pricing" id="pricing">
+    <!-- СТРУКТУРА ОБУЧЕНИЯ -->
+    <section class="course-structure">
         <div class="container">
-            <h2 class="section-title">Обучение с нуля</h2>
-            <div class="cards-grid">
-                
-                <div class="card">
-                    <h3>Ламинирование ресниц</h3>
-                    <div class="price">80 000 ₸</div>
+            <div class="structure-header">
+                <h2 class="section-title" style="margin-bottom: 20px;">Как проходит обучение с нуля</h2>
+                <p>Курсы доступны в форматах <strong>Онлайн</strong> и <strong>Офлайн</strong>. <br>В онлайн-формате практика не предоставляется (только доступ к теории и сертификат).</p>
+            </div>
+
+            <div class="structure-grid">
+                <div class="structure-card">
+                    <h4>📚 БЛОК 1: Теоретическая база (Онлайн)</h4>
                     <ul>
-                        <li>Строение и фазы роста ресниц</li>
-                        <li>Правильный подбор валика</li>
-                        <li>Химия составов: как это работает</li>
-                        <li>Постановка руки</li>
-                        <li>Практика: 1 показательная + 2 модели</li>
-                        <li>Сертификат мастера</li>
-                        <li>Пожизненный доступ к материалам</li>
+                        <li>Вся теория структурирована и упакована в закрытом Telegram-канале.</li>
+                        <li>Никакой лишней воды — только концентрат знаний, алгоритмы работы и разбор составов.</li>
+                        <li>Изучайте материалы в своем темпе до начала практики.</li>
                     </ul>
-                    <a href="#contact" class="btn btn-outline">Выбрать</a>
+                    <p class="highlight-text">Бонус: Доступ к каналу остается с вами навсегда!</p>
                 </div>
 
-                <div class="card highlight">
-                    <h3>Комбо: Брови + Ресницы</h3>
-                    <div class="price">180 000 ₸</div>
-                    <p style="color: #666; font-size: 0.9rem; margin-top:-15px; margin-bottom:15px;">Выгода 20 000 ₸</p>
+                <div class="structure-card">
+                    <h4>👩‍🎨 БЛОК 2: Практическая отработка (Офлайн)</h4>
+                    <p>Встречаемся лично для постановки руки до уверенного результата:</p>
                     <ul>
-                        <li>Всё из курса по ресницам</li>
-                        <li>Всё из курса по бровям</li>
-                        <li>Универсальный мастер "под ключ"</li>
-                        <li>Отработка на 5+ моделях</li>
-                        <li>Два сертификата</li>
-                        <li>Поддержка после обучения</li>
+                        <li><strong>1 показательная модель:</strong> Я пошагово демонстрирую процедуру, комментирую каждое действие и делюсь фишками.</li>
+                        <li><strong>2 модели для ученицы:</strong> Самостоятельная отработка под моим строгим, но бережным контролем.</li>
                     </ul>
+                </div>
+
+                <div class="structure-card">
+                    <h4>🤝 Обратная связь и поддержка</h4>
+                    <ul>
+                        <li><strong>Сомневаетесь?</strong> Можем встретиться лично перед началом обучения: познакомимся, выпьем кофе, развеем страхи.</li>
+                        <li><strong>Всегда на связи:</strong> Вы не останетесь одни после курса. Я всегда доступна в мессенджерах для своих учениц.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ТАРИФЫ -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <h2 class="section-title">Выбери свое направление</h2>
+            <div class="cards-grid">
+                
+                <!-- Тариф: Ресницы -->
+                <div class="card">
+                    <h3>Ламинирование ресниц</h3>
+                    <div class="price-box">
+                        <div class="price-offline">80 000 ₸ <span style="font-size: 1rem; color: #4A3C31; font-weight: 400;">(Офлайн с практикой)</span></div>
+                        <div class="price-online">60 000 ₸ (Онлайн без практики)</div>
+                    </div>
+                    <ul>
+                        <li>Строение и фазы роста ресницы</li>
+                        <li>Правильный подбор и виды валиков</li>
+                        <li>Окрашивание ресниц (как сделать, чтобы ресница оставалась черной)</li>
+                        <li>Исправление ламинирования (как убирать чужие косяки)</li>
+                        <li>Риски, аллергии и противопоказания</li>
+                        <li>Психология коммуникации с клиентом</li>
+                        <li>Сертификат</li>
+                    </ul>
+                    <div class="bonus-box">
+                        <strong>+ Бонус:</strong> Как снимать наращенные ресницы и работать с ремувером.
+                    </div>
+                    <a href="#contact" class="btn btn-outline">Выбрать курс</a>
+                </div>
+
+                <!-- Тариф: Комбо -->
+                <div class="card" style="border: 2px solid var(--accent-color);">
+                    <h3>Курс: Брови + Ресницы</h3>
+                    <div class="price-box">
+                        <div class="price-offline">180 000 ₸ <span style="font-size: 1rem; color: #4A3C31; font-weight: 400;">(Офлайн с практикой)</span></div>
+                        <div class="price-online">150 000 ₸ (Онлайн без практики)</div>
+                    </div>
+                    <ul>
+                        <li><strong>Вся программа курса по ресницам</strong></li>
+                        <li><strong>Вся программа курса по бровям</strong></li>
+                        <li>Два сертификата</li>
+                        <li>Отработка на моделях (в офлайн формате)</li>
+                    </ul>
+                    <div class="bonus-box" style="background-color: var(--bg-dark); border-left-color: var(--text-main);">
+                        <strong>🚀 ЭКСКЛЮЗИВНЫЙ БОНУС:</strong> Доступ к закрытому Telegram-каналу <strong>«SOLD OUT мастера»</strong>.<br><br>
+                        После обучения вы будете знать, как правильно упаковать свой профиль, привлекать клиентов с первых дней, продавать услуги дорого в переписках и ставить цены так, чтобы не уйти в минус.
+                    </div>
                     <a href="#contact" class="btn">Выбрать Комбо</a>
                 </div>
 
+                <!-- Тариф: Брови -->
                 <div class="card">
                     <h3>Ламинирование бровей</h3>
-                    <div class="price">120 000 ₸</div>
+                    <div class="price-box">
+                        <div class="price-offline">120 000 ₸ <span style="font-size: 1rem; color: #4A3C31; font-weight: 400;">(Офлайн с практикой)</span></div>
+                        <div class="price-online">90 000 ₸ (Онлайн без практики)</div>
+                    </div>
                     <ul>
                         <li>Архитектура и построение формы</li>
                         <li>Работа со сложной асимметрией</li>
                         <li>Колористика и окрашивание</li>
-                        <li>УГТ (уровень глубины тона) волоса</li>
-                        <li>Практика: отработка на 3 моделях</li>
-                        <li>Сертификат мастера</li>
-                        <li>Чек-лист по материалам</li>
+                        <li>Адаптация бровей под форму лица</li>
+                        <li>УГТ (уровень глубины тона)</li>
+                        <li>Ламинирование бровей</li>
+                        <li>Коррекция (пинцет/воск)</li>
+                        <li>Строение кожи и волоса</li>
+                        <li>Дезинфекция и стерилизация</li>
+                        <li>Сертификат</li>
                     </ul>
-                    <a href="#contact" class="btn btn-outline">Выбрать</a>
+                    <div class="bonus-box">
+                        <strong>+ Бонус:</strong> Авторские лайфхаки, которые можно использовать в процедуре.
+                    </div>
+                    <a href="#contact" class="btn btn-outline">Выбрать курс</a>
                 </div>
 
             </div>
         </div>
     </section>
 
-    <section class="mentorship-section">
-        <div class="container">
-            <div class="mentorship">
-                <h3>Индивидуальное наставничество</h3>
-                <p style="margin-bottom: 20px;">Для действующих мастеров, которые хотят вырасти в доходе и качестве.</p>
-                <div class="price" style="margin-top: 0;">120 000 ₸ / 4 недели</div>
-                <p style="margin-bottom: 30px; text-align: left; display: inline-block;">
-                    • Глубокий разбор ваших текущих работ<br>
-                    • Исправление ошибок в технике<br>
-                    • Постановка руки и ускорение работы<br>
-                    • Секреты идеальных выкладок и чистых линий
-                </p>
-                <br>
-                <a href="#contact" class="btn">Записаться на наставничество</a>
-            </div>
-        </div>
-    </section>
-
+    <!-- FAQ -->
     <section class="faq">
         <div class="container" style="max-width: 800px;">
             <h2 class="section-title">Частые вопросы</h2>
-            
             <div class="faq-item">
                 <h4>Нужно ли мне самой искать моделей?</h4>
-                <p>Нет, поиск моделей на время обучения я беру на себя. Вы приходите и спокойно отрабатываете практику под моим руководством.</p>
+                <p>Нет, поиск моделей на время офлайн-обучения я беру на себя. Вы приходите и спокойно отрабатываете практику.</p>
             </div>
-
             <div class="faq-item">
                 <h4>Выдается ли сертификат после обучения?</h4>
-                <p>Да! По окончании курса и успешной сдачи практической части вы получаете именной сертификат, подтверждающий вашу квалификацию.</p>
+                <p>Да! По окончании курса вы получаете именной сертификат, подтверждающий вашу квалификацию. Сертификат выдается как при офлайн, так и при онлайн формате обучения.</p>
             </div>
-
             <div class="faq-item">
                 <h4>А что, если у меня не получится?</h4>
                 <p>Учиться новому всегда волнительно, это нормально. Программа выстроена так, что мы идем от простого к сложному. Я буду ставить вам руку лично. Плюс, после обучения у вас остается моя поддержка — я не бросаю своих учеников.</p>
@@ -447,27 +251,25 @@
         </div>
     </section>
 
+    <!-- ФОРМА -->
     <section class="contact" id="contact">
         <div class="container">
             <div class="contact-wrapper">
-                <h2 class="section-title" style="margin-bottom: 20px;">Бесплатная консультация</h2>
-                <p>Сомневаешься, какой курс выбрать? Запишись на бесплатную 15-минутную консультацию — разберем твою ситуацию (для новичка или мастера).</p>
+                <h2 class="section-title" style="margin-bottom: 20px;">Оставить заявку</h2>
+                <p style="text-align: center; margin-bottom: 30px;">Оставь свои контакты, и я свяжусь с тобой для бесплатной консультации или записи на обучение.</p>
                 
-                <form action="#" method="POST" onsubmit="event.preventDefault(); alert('Спасибо за заявку! В реальном проекте здесь будет отправка данных.');">
+                <form action="https://formsubmit.co/sonya2004y@GMAIL.COM" method="POST">
+                    <input type="hidden" name="_subject" value="Новая заявка на обучение!">
+                    <input type="hidden" name="_captcha" value="false">
+                    
                     <input type="text" name="name" placeholder="Твое имя" required>
                     <input type="tel" name="phone" placeholder="Номер телефона / WhatsApp" required>
-                    
-                    <select name="level" required>
-                        <option value="" disabled selected>Выбери свой уровень</option>
-                        <option value="beginner">Новичок (хочу обучиться с нуля)</option>
-                        <option value="master">Мастер (интересует наставничество)</option>
-                    </select>
 
-                    <button type="submit" class="btn" style="width: 100%; margin-top: 10px;">Оставить заявку</button>
+                    <button type="submit" class="btn" style="width: 100%; margin-top: 10px;">Записаться</button>
                     
-                    <p style="margin-top: 20px; font-size: 0.9rem; color: #88786B;">
+                    <p style="margin-top: 20px; font-size: 0.9rem; color: #88786B; text-align: center;">
                         Или напиши мне напрямую в <br>
-                        <a href="https://wa.me/77000000000" target="_blank" style="color: #25D366; font-weight: bold; font-size: 1.1rem; text-decoration: underline;">WhatsApp</a>
+                        <a href="https://wa.me/77075227137" target="_blank" style="color: #25D366; font-weight: bold; font-size: 1.1rem; text-decoration: underline;">WhatsApp</a>
                     </p>
                 </form>
             </div>
@@ -476,7 +278,7 @@
 
     <footer>
         <div class="container">
-            <p>© 2026 Софья. Обучение ламинированию бровей и ресниц.</p>
+            <p>© 2026 Софья Юссупова. Обучение ламинированию бровей и ресниц.</p>
         </div>
     </footer>
 
